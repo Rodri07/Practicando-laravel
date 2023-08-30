@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('direccion'); // campo
 
             // ENTIDAD - RELACION N
-            $table->unsignedBigInteger('id_producto')->unique(); // llave foranea de producto unico
+
+            // esta line controla que se registren id que existan en la tabla fuerte
+            $table->unsignedBigInteger('id_producto')->unique();
 
             // esto acepta solos las llaves primarias que existan en la tabla producto
             // que hacen referncia en caso de no existan no habra un registro
